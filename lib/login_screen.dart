@@ -17,9 +17,11 @@ class _login_screenState extends State<login_screen> {
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Column(children: <Widget>[
+      resizeToAvoidBottomInset: false,
+      body: SingleChildScrollView(
+      child: Column(children: <Widget>[
         Container(
-          height: 700,
+          height: 750,
           child: Container(
               child: Stack(children: <Widget>[
                 Positioned(
@@ -52,9 +54,76 @@ class _login_screenState extends State<login_screen> {
                     ],
                   ),
                 ),
+                Container(
+                  height: 50,
+                  margin: EdgeInsets.only(top: 180, left: 40, right: 40),
+                  padding: EdgeInsets.only(top: 2, left: 8, right: 8, bottom: 4),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(30)
+                  ),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      icon: Icon(Icons.email),
+                      hintText: "E-mail",
+                        enabledBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.white)
+                        )
+                    ),
+                  ),
+                ),
+
+                Container(
+                  height: 50,
+                  margin: EdgeInsets.only(top: 250, left: 40, right: 40),
+                  padding: EdgeInsets.only(top: 2, left: 8, right: 8, bottom: 4),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(30)
+                  ),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                        icon: Icon(Icons.lock_rounded),
+                        hintText: "Senha",
+                        enabledBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: Colors.white)
+                        ),
+                    ),
+                    obscureText: true,
+                  ),
+                ),
+
+                Container(
+                  margin: EdgeInsets.only(top: 320, left: 40, right: 40),
+                  padding: EdgeInsets.only(top: 2, left: 8, right: 8, bottom: 4),
+                  child: SizedBox(
+                    height: 50,
+                    width: 700,
+                  child: RaisedButton(
+                    onPressed: (){},
+                    color: Color(0xFF9f1a1b),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(30))
+                    ),
+                    child: Text(
+                      "Login", style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                  )),
+
+                  Container(
+                      margin: EdgeInsets.only(top: 370),
+                      padding: EdgeInsets.only(top: 2, left: 8, right: 8, bottom: 4),
+                      height: 50,
+                      width: 700,
+                  child: TextButton(
+                  child: Text('Esqueceu Sua Senha?', style: TextStyle(color: Colors.white),),
+                  onPressed: (){},
+    )),
               ])),
         ),
+
       ]),
-    );
+      ));
   }
 }

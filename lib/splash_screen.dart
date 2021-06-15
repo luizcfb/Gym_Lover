@@ -13,8 +13,7 @@ class _splash_screenState extends State<splash_screen> {
     super.initState();
     Future.delayed(
       Duration(milliseconds: 1500),
-      () => Navigator.push(
-        context,
+      () => Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (context) => login_screen()),
       ),
     );
