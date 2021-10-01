@@ -1,5 +1,13 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:gym_lover/auth_exception.dart';
+import 'package:js/js.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:gym_lover/auth.dart';
+import 'package:gym_lover/cadastro.dart';
+import 'package:gym_lover/Validacao.dart';
+import "package:provider/provider.dart";
+
 
 class login_screen extends StatefulWidget {
   @override
@@ -7,6 +15,11 @@ class login_screen extends StatefulWidget {
 }
 
 class _login_screenState extends State<login_screen> {
+
+  final email = TextEditingController();
+  final senha = TextEditingController();
+  bool loading = false;
+
   @override
   void initState() {
     SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
@@ -15,6 +28,11 @@ class _login_screenState extends State<login_screen> {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
+    Auth auth = Provider.of(context, listen: false);
+    Validacao validacao = new Validacao();
+
+
+
     return Scaffold(
         backgroundColor: Colors.white,
         resizeToAvoidBottomInset: false,
@@ -62,12 +80,16 @@ class _login_screenState extends State<login_screen> {
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(30)),
-                  child: TextField(
+                  child: TextFormField(
+                    controller: email,
                     decoration: InputDecoration(
                         icon: Icon(Icons.email),
                         hintText: "E-mail",
                         enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white))),
+                            borderSide: BorderSide(color: Colors.white)),
+                     //   errorText: validacao.emailValidacao(email.text),
+                    ),
+
                   ),
                 ),
 
@@ -80,15 +102,18 @@ class _login_screenState extends State<login_screen> {
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(30)),
                   child: TextFormField(
+                    controller: senha,
                     decoration: InputDecoration(
                       icon: Icon(Icons.lock_rounded),
                       hintText: "Senha",
                       enabledBorder: UnderlineInputBorder(
                           borderSide: BorderSide(color: Colors.white)),
+                      //errorText: validacao.senhaValidacao(senha.text),
                     ),
                     obscureText: true,
                   ),
                 ),
+
                 Container(
                     margin: EdgeInsets.only(top: 320, left: 40, right: 40),
                     padding:
@@ -97,7 +122,21 @@ class _login_screenState extends State<login_screen> {
                       height: 50,
                       width: 700,
                       child: RaisedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                       //   var validatext = validacao.SenhaEmailValidacao(email.text, senha.text);
+
+                       //   if (validatext != null){
+                            //**** continuar essa logica !!! *****
+                       //   }else{
+                          try {
+                            auth.sigin( email.text, senha.text);
+                          }on AuthException catch (e){
+                            auth.showSnack('Erro na Autenticação', e.toString());
+                          } catch (e){
+                            auth.showSnack('Erro na Autenticação', 'Erro Inesperado !');
+                          }
+                       //   }
+                        },
                         color: Color(0xFF9f1a1b),
                         shape: RoundedRectangleBorder(
                             borderRadius:
@@ -142,7 +181,11 @@ class _login_screenState extends State<login_screen> {
                           height: 50,
                           width: 700,
                           child: RaisedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                                return cadastro_screen();
+                              }, ),);
+                            },
                             color: Color(0xFF9f1a1b),
                             shape: RoundedRectangleBorder(
                                 borderRadius:
