@@ -1,12 +1,12 @@
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:gym_lover/auth_exception.dart';
-import 'package:js/js.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:gym_lover/auth_exception.dart';
+// import 'package:js/js.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:gym_lover/auth.dart';
+// import 'package:gym_lover/auth.dart';
 import 'package:gym_lover/cadastro.dart';
-import 'package:gym_lover/Validacao.dart';
-import "package:provider/provider.dart";
+// import 'package:gym_lover/Validacao.dart';
+// import "package:provider/provider.dart";
 
 
 class login_screen extends StatefulWidget {
@@ -27,9 +27,9 @@ class _login_screenState extends State<login_screen> {
 
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
-    Auth auth = Provider.of(context, listen: false);
-    Validacao validacao = new Validacao();
+    // final width = MediaQuery.of(context).size.width;
+    // Auth auth = Provider.of(context, listen: false);
+    // Validacao validacao = new Validacao();
 
 
 
@@ -128,13 +128,13 @@ class _login_screenState extends State<login_screen> {
                        //   if (validatext != null){
                             //**** continuar essa logica !!! *****
                        //   }else{
-                          try {
-                            auth.sigin( email.text, senha.text);
-                          }on AuthException catch (e){
-                            auth.showSnack('Erro na Autenticação', e.toString());
-                          } catch (e){
-                            auth.showSnack('Erro na Autenticação', 'Erro Inesperado !');
-                          }
+                       //    try {
+                       //      auth.sigin( email.text, senha.text);
+                       //    }on AuthException catch (e){
+                       //      auth.showSnack('Erro na Autenticação', e.toString());
+                       //    } catch (e){
+                       //      auth.showSnack('Erro na Autenticação', 'Erro Inesperado !');
+                       //    }
                        //   }
                         },
                         color: Color(0xFF9f1a1b),
