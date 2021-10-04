@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 // import 'package:gym_lover/auth.dart';
 import 'package:gym_lover/cadastro.dart';
+import 'package:gym_lover/home.dart';
 // import 'package:gym_lover/Validacao.dart';
 // import "package:provider/provider.dart";
 
@@ -121,8 +122,14 @@ class _login_screenState extends State<login_screen> {
                     child: SizedBox(
                       height: 50,
                       width: 700,
+                      // ignore: deprecated_member_use
                       child: RaisedButton(
                         onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) {
+                            return home_screen();
+                          }, ),);
+                        },
+                       // onPressed: () {
                        //   var validatext = validacao.SenhaEmailValidacao(email.text, senha.text);
 
                        //   if (validatext != null){
@@ -136,7 +143,7 @@ class _login_screenState extends State<login_screen> {
                        //      auth.showSnack('Erro na Autenticação', 'Erro Inesperado !');
                        //    }
                        //   }
-                        },
+                       // },
                         color: Color(0xFF9f1a1b),
                         shape: RoundedRectangleBorder(
                             borderRadius:
