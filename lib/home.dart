@@ -6,6 +6,8 @@ import 'package:flutter/services.dart';
 // import 'package:gym_lover/auth.dart';
 import 'package:gym_lover/cadastro.dart';
 import 'package:gym_lover/home.dart';
+
+import 'Treinos.dart';
 // import 'package:gym_lover/Validacao.dart';
 // import "package:provider/provider.dart";
 
@@ -51,7 +53,7 @@ class _home_screenState extends State<home_screen> {
                     child: Align(
                         alignment: Alignment.topLeft,
                         child: Container(
-                          margin: const EdgeInsets.only(top: 20.0),
+                          margin: EdgeInsets.only(top: 20.0),
                           height: 50,
                           width: 50,
                           decoration: BoxDecoration(
@@ -69,33 +71,116 @@ class _home_screenState extends State<home_screen> {
                     ],
                   ),
                 ),
-                    ListView(
-                      children: const <Widget>[
-                        Card(
-                          child: ListTile(
-                            //leading: FlutterLogo(),
-                            title: Text('Treino 1'),
+                Container(
+                    margin: EdgeInsets.only(top: 270.0, left: 15, right: 15),
+                    child: ListView(
+                      children: <Widget>[
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return treinos_screen();
+                                },
+                              ),
+                            );
+                          },
+                          child: Card(
+                            child: Container(
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage('assets/image/1.jpg'),
+                                  fit: BoxFit.cover,
+                                  alignment: Alignment.topCenter,
+                                ),
+                              ),
+                              height: 180,
+                              child: Container(
+                                child: Text(
+                                  "TREINO 1",
+                                  style: TextStyle(
+                                      fontSize: 22,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                margin: EdgeInsets.only(top: 20, left: 15),
+                              ),
+                            ),
                           ),
                         ),
-                        Card(
-                          child: ListTile(
-                            //leading: FlutterLogo(),
-                            title: Text('Treino 2'),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return treinos_screen();
+                                },
+                              ),
+                            );
+                          },
+                          child: Card(
+                            child: Container(
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage('assets/image/2.jpg'),
+                                  fit: BoxFit.cover,
+                                  alignment: Alignment.topCenter,
+                                ),
+                              ),
+                              height: 180,
+                              child: Container(
+                                child: Text(
+                                  "TREINO 2",
+                                  style: TextStyle(
+                                      fontSize: 22,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                margin: EdgeInsets.only(top: 20, left: 15),
+                              ),
+                            ),
                           ),
                         ),
-                        Card(
-                          child: ListTile(
-                            //leading: FlutterLogo(),
-                            title: Text('Treino 3'),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return treinos_screen();
+                                },
+                              ),
+                            );
+                          },
+                          child: Card(
+                            child: Container(
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage('assets/image/3.jpg'),
+                                  fit: BoxFit.cover,
+                                  alignment: Alignment.topCenter,
+                                ),
+                              ),
+                              height: 180,
+                              child: Container(
+                                child: Text(
+                                  "TREINO 3",
+                                  style: TextStyle(
+                                      fontSize: 22,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                margin: EdgeInsets.only(top: 20, left: 15),
+                              ),
+                            ),
                           ),
                         ),
                       ],
-                    )
-
+                    ))
               ])),
-
             ),
-
           ]),
         ));
   }
