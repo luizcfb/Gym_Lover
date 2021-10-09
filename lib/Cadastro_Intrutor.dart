@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
-class cadastro_aluno extends StatefulWidget {
+class cadastro_instrutor extends StatefulWidget {
   @override
-  _cadastro_alunoState createState() => _cadastro_alunoState();
+  _cadastro_instrutorState createState() => _cadastro_instrutorState();
 }
 
-class _cadastro_alunoState extends State<cadastro_aluno> {
+class _cadastro_instrutorState extends State<cadastro_instrutor> {
   @override
   Widget build(BuildContext context) {
     final altura = MediaQuery.of(context).size.height;
@@ -20,36 +20,36 @@ class _cadastro_alunoState extends State<cadastro_aluno> {
     String selectedSalutation;
 
     return Scaffold(
-      backgroundColor: Colors.transparent,
-      body: SingleChildScrollView(
-          reverse: true,
-          child: Stack(children: [
-            Container(
-                alignment: Alignment.topCenter,
-                margin: EdgeInsets.only(top: altura * 0.04),
-                child: CircleAvatar(
-                  radius: largura / 3.85,
-                  backgroundColor: Colors.white,
-                  child: CircleAvatar(
-                      radius: largura / 4,
-                      backgroundColor: Color(0xFFd0312b).withOpacity(0.95),
-                      backgroundImage: (_pikedImage == null)
-                          ? null
-                          : FileImage(_pikedImage)),
-                )),
-            Positioned(
-                top: altura * 0.20,
-                width: largura * 1.38,
-                child: RawMaterialButton(
-                  elevation: 10,
-                  fillColor: Color(0xFF9f1a1b).withOpacity(1.0),
-                  child: Icon(FontAwesomeIcons.camera, color: Colors.white),
-                  padding: EdgeInsets.all(altura * 0.04),
-                  shape: CircleBorder(),
-                  onPressed: () {},
-                )),
-            Container(
-                child: Padding(
+          backgroundColor: Colors.transparent,
+          body: SingleChildScrollView(
+              reverse: true,
+              child: Stack(children: [
+                Container(
+                    alignment: Alignment.topCenter,
+                    margin: EdgeInsets.only(top: altura * 0.04),
+                    child: CircleAvatar(
+                      radius: largura / 3.85,
+                      backgroundColor: Colors.white,
+                      child: CircleAvatar(
+                          radius: largura / 4,
+                          backgroundColor: Color(0xFFd0312b).withOpacity(0.95),
+                          backgroundImage: (_pikedImage == null)
+                              ? null
+                              : FileImage(_pikedImage)),
+                    )),
+                Positioned(
+                    top: altura * 0.20,
+                    width: largura * 1.38,
+                    child: RawMaterialButton(
+                      elevation: 10,
+                      fillColor: Color(0xFF9f1a1b).withOpacity(1.0),
+                      child: Icon(FontAwesomeIcons.camera, color: Colors.white),
+                      padding: EdgeInsets.all(altura * 0.04),
+                      shape: CircleBorder(),
+                      onPressed: () {},
+                    )),
+                Container(
+                    child: Padding(
                   padding: EdgeInsets.only(
                       top: altura * 0.36,
                       left: largura * 0.01,
@@ -113,13 +113,25 @@ class _cadastro_alunoState extends State<cadastro_aluno> {
 
                       TextFormField(
                           decoration: InputDecoration(
-                            icon:
+                        icon: Icon(Icons.calendar_today,
+                            color: Colors.transparent, size: 35),
+                        hintText: ' CONFEF',
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.black54),
+                            borderRadius: BorderRadius.circular(30.0)),
+                      )),
+
+                      SizedBox(height: altura * 0.01),
+
+                      TextFormField(
+                          decoration: InputDecoration(
+                        icon:
                             Icon(Icons.email, color: Color(0xFF9f1a1b), size: 35),
-                            hintText: '  Email',
-                            enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.black54),
-                                borderRadius: BorderRadius.circular(30.0)),
-                          )),
+                        hintText: '  Email',
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.black54),
+                            borderRadius: BorderRadius.circular(30.0)),
+                      )),
 
                       SizedBox(height: altura * 0.01),
 
@@ -128,6 +140,7 @@ class _cadastro_alunoState extends State<cadastro_aluno> {
                         decoration: InputDecoration(
                           icon: Icon(Icons.email,
                               color: Colors.transparent, size: 35),
+                          hintText: '  Email',
                           enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(color: Colors.black54),
                               borderRadius: BorderRadius.circular(30.0)),
@@ -138,7 +151,7 @@ class _cadastro_alunoState extends State<cadastro_aluno> {
                         onChanged: (salutation) =>
                             setState(() => selectedSalutation = salutation!),
                         validator: (value) =>
-                        value == null ? 'field required' : null,
+                            value == null ? 'field required' : null,
                         items: ['Masculino', 'Feminino', 'Outros']
                             .map<DropdownMenuItem<String>>((String value) {
                           return DropdownMenuItem<String>(
@@ -152,25 +165,25 @@ class _cadastro_alunoState extends State<cadastro_aluno> {
 
                       TextFormField(
                           decoration: InputDecoration(
-                            icon: Icon(Icons.lock_rounded,
-                                color: Color(0xFF9f1a1b), size: 35),
-                            hintText: ' Senha',
-                            enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.black54),
-                                borderRadius: BorderRadius.circular(30.0)),
-                          )),
+                        icon: Icon(Icons.lock_rounded,
+                            color: Color(0xFF9f1a1b), size: 35),
+                        hintText: ' Senha',
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.black54),
+                            borderRadius: BorderRadius.circular(30.0)),
+                      )),
 
                       SizedBox(height: altura * 0.01),
 
                       TextFormField(
                           decoration: InputDecoration(
-                            icon: Icon(Icons.lock_rounded,
-                                color: Colors.transparent, size: 35),
-                            hintText: ' Confirme Sua Senha',
-                            enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.black54),
-                                borderRadius: BorderRadius.circular(30.0)),
-                          )),
+                        icon: Icon(Icons.lock_rounded,
+                            color: Colors.transparent, size: 35),
+                        hintText: ' Confirme Sua Senha',
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.black54),
+                            borderRadius: BorderRadius.circular(30.0)),
+                      )),
 
                       SizedBox(height: altura * 0.025),
 
@@ -181,7 +194,7 @@ class _cadastro_alunoState extends State<cadastro_aluno> {
                             fixedSize: Size(largura * 0.99, altura * 0.08),
                             shape: RoundedRectangleBorder(
                                 borderRadius:
-                                BorderRadius.all(Radius.circular(30)))),
+                                    BorderRadius.all(Radius.circular(30)))),
                         child: Text(
                           "Cadastre-se",
                           style: TextStyle(color: Colors.white),
@@ -190,7 +203,7 @@ class _cadastro_alunoState extends State<cadastro_aluno> {
                     ],
                   ),
                 ))
-          ])),
+              ])),
     );
   }
 }

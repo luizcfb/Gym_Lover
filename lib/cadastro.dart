@@ -1,8 +1,8 @@
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:simple_animations/simple_animations.dart';
-
 import 'Cadastro_Aluno.dart';
+import 'Cadastro_Intrutor.dart';
 
 class cadastro_screen extends StatefulWidget {
   @override
@@ -43,48 +43,7 @@ class _cadastro_screenState extends State<cadastro_screen> {
 
                     cadastro_aluno(),
 
-                    Scaffold(
-                      backgroundColor: Colors.transparent,
-                      body: SingleChildScrollView(
-                          child: Stack( children: [
-                          Container(
-                          margin: EdgeInsets.only(top: altura * 0.04),
-                          child: Positioned(
-                              child: Align(
-                                alignment: Alignment.topCenter,
-                                child: CircleAvatar(
-                                    radius: largura / 4,
-                                    backgroundColor:
-                                    Color(0xFFd0312b).withOpacity(0.95),
-                                    child: Icon(
-                                      FontAwesomeIcons.user,
-                                      color: Colors.white,
-                                      size: altura * 0.12,
-                                    )),
-                              ))),
-                      Positioned(
-                        top: altura * 0.22,
-                        width: largura * 1.4,
-                        child: Container(
-                          height: altura * 0.09,
-                          width: largura * 0.09,
-                          decoration: BoxDecoration(
-                            color: Color(0xFF9f1a1b).withOpacity(1.0),
-                            shape: BoxShape.circle,
-                          ),
-                          child: Icon(FontAwesomeIcons.camera,
-                              color: Colors.white),
-                        ),
-                      ),
-                      // Column(
-                      //     children: [
-                      //       Flexible(child: Text('Nome Completo *', style: TextStyle(
-                      //           color: Colors.black, fontSize: 20),)
-                      //       )]),
-                  ])
-        )),
-//--------------------------------------------------------------------------//
-//     Container()
+                    cadastro_instrutor(),
      ],
     ))));
   }
