@@ -129,8 +129,8 @@ class _treinos_screenState extends State<treinos_screen> {
                                   child: Container(
                                     decoration: BoxDecoration(
                                       image: DecorationImage(
-                                        image: AssetImage(
-                                            'assets/image.absupra.jpg'),
+                                        image:
+                                            AssetImage('assets/image/poli.jpg'),
                                         fit: BoxFit.cover,
                                         alignment: Alignment.topCenter,
                                       ),
@@ -153,163 +153,9 @@ class _treinos_screenState extends State<treinos_screen> {
                             ),
                           ],
                         ),
+                        Row(),
                         Row(
-                          children: [
-                            Expanded(
-                              child: GestureDetector(
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) {
-                                        return treinos_screen();
-                                      },
-                                    ),
-                                  );
-                                },
-                                child: Card(
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                        image: AssetImage(
-                                            'assets/image/esteira.jpg'),
-                                        fit: BoxFit.cover,
-                                        alignment: Alignment.topCenter,
-                                      ),
-                                    ),
-                                    height: 180,
-                                    child: Container(
-                                      child: Text(
-                                        "Esteira",
-                                        style: TextStyle(
-                                            fontSize: 22,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      margin:
-                                          EdgeInsets.only(top: 20, left: 15),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Expanded(
-                              child: GestureDetector(
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) {
-                                        return treinos_screen();
-                                      },
-                                    ),
-                                  );
-                                },
-                                child: Card(
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                        image: AssetImage(
-                                            'assets/image/legpress.jpg'),
-                                        fit: BoxFit.cover,
-                                        alignment: Alignment.topCenter,
-                                      ),
-                                    ),
-                                    height: 180,
-                                    child: Container(
-                                      child: Text(
-                                        "Leg Press",
-                                        style: TextStyle(
-                                            fontSize: 22,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      margin:
-                                          EdgeInsets.only(top: 20, left: 15),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            Expanded(
-                              child: GestureDetector(
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) {
-                                        return treinos_screen();
-                                      },
-                                    ),
-                                  );
-                                },
-                                child: Card(
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                        image: AssetImage('assets/image/1.jpg'),
-                                        fit: BoxFit.cover,
-                                        alignment: Alignment.topCenter,
-                                      ),
-                                    ),
-                                    height: 180,
-                                    child: Container(
-                                      child: Text(
-                                        "Supino sentado na máquina",
-                                        style: TextStyle(
-                                            fontSize: 22,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      margin:
-                                          EdgeInsets.only(top: 20, left: 15),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Expanded(
-                              child: GestureDetector(
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) {
-                                        return treinos_screen();
-                                      },
-                                    ),
-                                  );
-                                },
-                                child: Card(
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                        image: AssetImage('assets/image/1.jpg'),
-                                        fit: BoxFit.cover,
-                                        alignment: Alignment.topCenter,
-                                      ),
-                                    ),
-                                    height: 180,
-                                    child: Container(
-                                      child: Text(
-                                        "Cadeira extensora",
-                                        style: TextStyle(
-                                            fontSize: 22,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      margin:
-                                          EdgeInsets.only(top: 20, left: 15),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
+                          children: [],
                         ),
                       ],
                     ))
