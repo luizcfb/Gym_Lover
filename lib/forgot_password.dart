@@ -8,6 +8,9 @@ class ForgotPassword extends StatefulWidget {
 }
 
 class _ForgotPasswordState extends State<ForgotPassword> {
+  final email = TextEditingController();
+  bool loading = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,83 +38,105 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                         ),
                       ),
                     ),
-                    Positioned(
-                      child: Align(
-                        alignment: Alignment.topCenter,
-                        child: Container(
-                          margin: const EdgeInsets.only(top: 15.0),
-                          height: 150,
-                          width: 150,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image:
-                                  AssetImage('assets/image/logo.colorida.png'),
-                              fit: BoxFit.cover,
+                    Expanded(
+                      child: Column(
+                        children: [
+                          Container(
+                            margin: EdgeInsets.only(top: 15.0),
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 8,
+                              vertical: 2,
+                            ),
+                            height: 150,
+                            width: 150,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage(
+                                    'assets/image/logo.colorida.png'),
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      height: 50,
-                      margin: EdgeInsets.only(
-                        top: 200,
-                        left: 40,
-                        right: 40,
-                      ),
-                      padding: EdgeInsets.only(
-                        top: 2,
-                        left: 8,
-                        right: 8,
-                        bottom: 4,
-                      ),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                          icon: Icon(Icons.email),
-                          hintText: "E-mail",
-                          enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
+                          Container(
+                            margin: EdgeInsets.only(
+                              top: 20,
+                              left: 20,
+                              right: 20,
+                            ),
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 8,
+                              vertical: 2,
+                            ),
+                            child: Text(
+                              "Esqueceu a senha né? Coloca teu email no campo abaixo e clica em enviar, se houver conta existente com esse email, ele chegará em instantes!",
+                              style: TextStyle(color: Colors.white),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                          Container(
+                            height: 50,
+                            margin: EdgeInsets.all(40),
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 8,
+                              vertical: 2,
+                            ),
+                            decoration: BoxDecoration(
                               color: Colors.white,
+                              borderRadius: BorderRadius.circular(30),
+                            ),
+                            child: TextFormField(
+                              controller: email,
+                              decoration: InputDecoration(
+                                icon: Icon(Icons.email),
+                                hintText: "E-mail",
+                                enabledBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(
-                        top: 320,
-                        left: 40,
-                        right: 40,
-                      ),
-                      padding: EdgeInsets.only(
-                        top: 2,
-                        left: 8,
-                        right: 8,
-                        bottom: 4,
-                      ),
-                      child: SizedBox(
-                        height: 50,
-                        width: 700,
-                        // ignore: deprecated_member_use
-                        child: RaisedButton(
-                          onPressed: () {},
-                          color: Color(0xFF9f1a1b),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(30),
+                          Container(
+                            margin: EdgeInsets.all(40),
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 8,
+                              vertical: 2,
+                            ),
+                            child: SizedBox(
+                              height: 50,
+                              width: 700,
+                              // ignore: deprecated_member_use
+                              child: RaisedButton(
+                                onPressed: () {
+                                  setState(() {
+                                    loading = true;
+                                  });
+                                },
+                                color: Color(0xFF9f1a1b),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(30),
+                                  ),
+                                ),
+                                child: loading
+                                    ? Container(
+                                        width: 20,
+                                        height: 20,
+                                        child: CircularProgressIndicator(
+                                          color: Colors.white,
+                                        ),
+                                      )
+                                    : Text(
+                                        "ENVIAR",
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                              ),
                             ),
                           ),
-                          child: Text(
-                            "Enviar para E-mail",
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
+                        ],
                       ),
                     ),
                   ],
