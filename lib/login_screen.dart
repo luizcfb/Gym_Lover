@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 // import 'package:gym_lover/auth.dart';
 import 'package:gym_lover/cadastro.dart';
+import 'package:gym_lover/forgot_password.dart';
 import 'package:gym_lover/home.dart';
 // import 'package:gym_lover/Validacao.dart';
 // import "package:provider/provider.dart";
@@ -166,7 +167,11 @@ class _login_screenState extends State<login_screen> {
                         'Esqueceu Sua Senha?',
                         style: TextStyle(color: Colors.white),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) {
+                          return ForgotPassword();
+                        }, ),);
+                      },
                     )),
 
                     Container(
