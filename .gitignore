@@ -13,6 +13,7 @@
 bin/
 gen/
 out/
+.dart_tool/
 
 # Gradle files
 .gradle/

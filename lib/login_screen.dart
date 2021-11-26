@@ -6,7 +6,7 @@ import 'package:flutter/services.dart';
 // import 'package:gym_lover/auth.dart';
 import 'package:gym_lover/cadastro.dart';
 import 'package:gym_lover/forgot_password.dart';
-import 'package:gym_lover/home.dart';
+import 'package:gym_lover/views/home.dart';
 // import 'package:gym_lover/Validacao.dart';
 // import "package:provider/provider.dart";
 
