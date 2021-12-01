@@ -2,6 +2,7 @@
 //import 'package:js/js.dart';
 import 'package:flutter/material.dart';
 import 'package:gym_lover/splash_screen.dart';
+import 'package:gym_lover/views/treino_personal.dart';
 //import 'package:flutter/services.dart';
 //import 'package:gym_lover/login_screen.dart';
 //import 'package:firebase_core/firebase_core.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
    @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: splash_screen(),
+      home: TreinoPersonal(),
     );
   }
 }
