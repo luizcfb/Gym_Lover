@@ -38,7 +38,6 @@ class _TreinoPersonalState extends State<TreinoPersonal> {
               slivers: [
                 SliverAppBar(
                   elevation: 0,
-                  floating: true,
                   backgroundColor: Colors.transparent,
                   toolbarHeight: 190,
                   flexibleSpace: FlexibleSpaceBar(
@@ -71,7 +70,7 @@ class _TreinoPersonalState extends State<TreinoPersonal> {
                   flex: 1,
                   child: SliverGrid(
                     gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                      maxCrossAxisExtent: 400.0,
+                      maxCrossAxisExtent: 200.0,
                       mainAxisSpacing: 10.0,
                       crossAxisSpacing: 10.0,
                       childAspectRatio: 1,
