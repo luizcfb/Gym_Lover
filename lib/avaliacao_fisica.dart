@@ -25,7 +25,7 @@ class _avaliacao_fisicaState extends State<avaliacao_fisica> {
           child: Column(
           children: <Widget>[
       Container(
-      height: 750,
+      height: 900,
       child: Container(
           child: Stack(
               children: <Widget>[
@@ -33,12 +33,13 @@ class _avaliacao_fisicaState extends State<avaliacao_fisica> {
                   child: Container(
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image: AssetImage('assets/image/background_cadastro.jpg'),
+                        image: AssetImage('assets/image/background_avfisica.png'),
                         fit: BoxFit.cover,
                       ),
                     ),
                   ),
                 ),
+
             Container(
                 child: Padding(
                   padding: EdgeInsets.only(
@@ -70,43 +71,49 @@ class _avaliacao_fisicaState extends State<avaliacao_fisica> {
 
                       SizedBox(height: altura * 0.01),
 
-                      TextFormField(
-                          inputFormatters: [maskFormatterdata],
-                          decoration: InputDecoration(
-                            icon: Icon(Icons.calendar_today,
-                                color: Color(0xFF9f1a1b), size: 35),
-                            hintText: ' Data de Nascimento',
-                            enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.black54),
-                                borderRadius: BorderRadius.circular(30.0)),
-                          )),
-
-                      SizedBox(height: altura * 0.01),
-
-                      DropdownButtonFormField<String>(
-                        //value: selectedSalutation,
-                        decoration: InputDecoration(
-                          icon: Icon(Icons.email,
-                              color: Colors.transparent, size: 35),
-                          enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.black54),
-                              borderRadius: BorderRadius.circular(30.0)),
+                      Row(children: [
+                        Expanded(
+                          child: TextFormField(
+                              inputFormatters: [maskFormatterdata],
+                              decoration: InputDecoration(
+                                icon: Icon(Icons.calendar_today,
+                                    color: Color(0xFF9f1a1b), size: 35),
+                                hintText: ' Data de Nascimento',
+                                enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.black54),
+                                    borderRadius: BorderRadius.circular(30.0)),
+                              )),
                         ),
-                        hint: Text(
-                          'Sexo',
+                        SizedBox(
+                          width: 5,
                         ),
-                        onChanged: (salutation) =>
-                            setState(() => selectedSalutation = salutation!),
-                        validator: (value) =>
-                        value == null ? 'field required' : null,
-                        items: ['Masculino', 'Feminino', 'Outros']
-                            .map<DropdownMenuItem<String>>((String value) {
-                          return DropdownMenuItem<String>(
-                            value: value,
-                            child: Text(value),
-                          );
-                        }).toList(),
-                      ),
+                        Expanded(
+                          child: DropdownButtonFormField<String>(
+                            //value: selectedSalutation,
+                            decoration: InputDecoration(
+                              icon: Icon(Icons.email,
+                                  color: Colors.transparent, size: 35),
+                              enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.black54),
+                                  borderRadius: BorderRadius.circular(30.0)),
+                            ),
+                            hint: Text(
+                              'Sexo',
+                            ),
+                            onChanged: (salutation) =>
+                                setState(() => selectedSalutation = salutation!),
+                            validator: (value) =>
+                            value == null ? 'field required' : null,
+                            items: ['Masculino', 'Feminino', 'Outros']
+                                .map<DropdownMenuItem<String>>((String value) {
+                              return DropdownMenuItem<String>(
+                                value: value,
+                                child: Text(value),
+                              );
+                            }).toList(),
+                          ),
+                        )
+                      ]),
 
                       SizedBox(height: altura * 0.01),
 
@@ -150,31 +157,168 @@ class _avaliacao_fisicaState extends State<avaliacao_fisica> {
 
                       SizedBox(height: altura * 0.01),
 
-                      TextFormField(
-                          decoration: InputDecoration(
-                            icon: Icon(Icons.lock_rounded,
-                                color: Colors.transparent, size: 35),
-                            hintText: ' Altura:',
-                            enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.black54),
-                                borderRadius: BorderRadius.circular(30.0)),
-                          )),
+                      Row(children: [
+                        Expanded(
+                          child: TextField(
+                              decoration: InputDecoration(
+                                icon: Icon(Icons.lock_rounded,
+                                    color: Colors.transparent, size: 35),
+                                hintText: "IMC: ",
+                                enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.black54),
+                                    borderRadius: BorderRadius.circular(30.0)),
+                              )),
+                        ),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Expanded(
+                          child: ElevatedButton(
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                                primary: Color(0xFF9f1a1b),
+                                fixedSize: Size(largura * 0.25, altura * 0.08),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                    BorderRadius.all(Radius.circular(10)))),
+                            child: Text(
+                              "Ref. IMC",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ),
+                        )
+                      ]),
 
                       SizedBox(height: altura * 0.025),
 
-                      ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                            primary: Color(0xFF9f1a1b),
-                            fixedSize: Size(largura * 0.99, altura * 0.08),
-                            shape: RoundedRectangleBorder(
-                                borderRadius:
-                                BorderRadius.all(Radius.circular(30)))),
-                        child: Text(
-                          "Cadastre-se",
-                          style: TextStyle(color: Colors.white),
+                      Row(children: [
+                        Expanded(
+                          child: TextField(
+                              decoration: InputDecoration(
+                                icon: Icon(Icons.lock_rounded,
+                                    color: Colors.transparent, size: 35),
+                                hintText: "%G Corporal (Body Fat): ",
+                                enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.black54),
+                                    borderRadius: BorderRadius.circular(30.0)),
+                              )),
                         ),
-                      ),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Expanded(
+                          child: ElevatedButton(
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                                primary: Color(0xFF9f1a1b),
+                                fixedSize: Size(largura * 0.25, altura * 0.08),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                    BorderRadius.all(Radius.circular(10)))),
+                            child: Text(
+                              "Ref. Body Fat",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ),
+                        )
+                      ]),
+
+                      SizedBox(height: altura * 0.025),
+
+                      Row(children: [
+                        Expanded(
+                          child: TextField(
+                              decoration: InputDecoration(
+                                icon: Icon(Icons.lock_rounded,
+                                    color: Colors.transparent, size: 35),
+                                hintText: "M. Esquelético (Muscle): ",
+                                enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.black54),
+                                    borderRadius: BorderRadius.circular(30.0)),
+                              )),
+                        ),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Expanded(
+                          child: ElevatedButton(
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                                primary: Color(0xFF9f1a1b),
+                                fixedSize: Size(largura * 0.25, altura * 0.08),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                    BorderRadius.all(Radius.circular(10)))),
+                            child: Text(
+                              "Ref. Muscle:",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ),
+                        )
+                      ]),
+
+                      SizedBox(height: altura * 0.025),
+
+                      Row(children: [
+                        Expanded(
+                          child: TextField(
+                              decoration: InputDecoration(
+                                icon: Icon(Icons.lock_rounded,
+                                    color: Colors.transparent, size: 35),
+                                hintText: "Met. em repouso: ",
+                                enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.black54),
+                                    borderRadius: BorderRadius.circular(30.0)),
+                              )),
+                        ),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Expanded(
+                          child: TextField(
+                              decoration: InputDecoration(
+                                hintText: "Idade bio.: ",
+                                enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.black54),
+                                    borderRadius: BorderRadius.circular(30.0)),
+                              )),
+                        )
+                      ]),
+
+                      SizedBox(height: altura * 0.01),
+
+                      Row(children: [
+                        Expanded(
+                          child: TextField(
+                              decoration: InputDecoration(
+                                icon: Icon(Icons.lock_rounded,
+                                    color: Colors.transparent, size: 35),
+                                hintText: "Gordura Visceral (Visceral Fat): ",
+                                enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.black54),
+                                    borderRadius: BorderRadius.circular(30.0)),
+                              )),
+                        ),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Expanded(
+                          child: ElevatedButton(
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                                primary: Color(0xFF9f1a1b),
+                                fixedSize: Size(largura * 0.25, altura * 0.08),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                    BorderRadius.all(Radius.circular(10)))),
+                            child: Text(
+                              "Ref. V. Fat:",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ),
+                        )
+                      ]),
+
                     ],
                   ),
                 ))
