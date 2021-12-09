@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:gym_lover/cadastro.dart';
 import 'package:gym_lover/forgot_password.dart';
 import 'package:gym_lover/views/home.dart';
+import 'Alunos_instrutor.dart';
 // import 'package:gym_lover/Validacao.dart';
 // import "package:provider/provider.dart";
 
@@ -22,6 +23,7 @@ class _login_screenState extends State<login_screen> {
   final senha = TextEditingController();
   bool loading = false;
 
+
   @override
   void initState() {
     SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
@@ -32,8 +34,8 @@ class _login_screenState extends State<login_screen> {
     // final width = MediaQuery.of(context).size.width;
     // Auth auth = Provider.of(context, listen: false);
     // Validacao validacao = new Validacao();
-
-
+    String email = "";
+    String senha = "";
 
     return Scaffold(
         backgroundColor: Colors.white,
@@ -82,8 +84,9 @@ class _login_screenState extends State<login_screen> {
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(30)),
-                  child: TextFormField(
-                    controller: email,
+                  child: TextField(
+                    onChanged: (text) {
+                      email = text;},
                     decoration: InputDecoration(
                         icon: Icon(Icons.email),
                         hintText: "E-mail",
@@ -91,7 +94,6 @@ class _login_screenState extends State<login_screen> {
                             borderSide: BorderSide(color: Colors.white)),
                      //   errorText: validacao.emailValidacao(email.text),
                     ),
-
                   ),
                 ),
 
@@ -103,8 +105,9 @@ class _login_screenState extends State<login_screen> {
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(30)),
-                  child: TextFormField(
-                    controller: senha,
+                  child: TextField(
+                    onChanged: (text) {
+                      senha = text;},
                     decoration: InputDecoration(
                       icon: Icon(Icons.lock_rounded),
                       hintText: "Senha",
@@ -126,10 +129,17 @@ class _login_screenState extends State<login_screen> {
                       // ignore: deprecated_member_use
                       child: RaisedButton(
                         onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) {
-                            return home_screen();
-                          }, ),);
-                        },
+                          if (senha == "123456" && email == "aluno@gymlover.com") {
+                            Navigator.push(
+                              context, MaterialPageRoute(builder: (context) {
+                              return home_screen();
+                            },),);
+                          } else if(senha == "123456" && email == "personal@gymlover.com"){
+                            Navigator.push(
+                              context, MaterialPageRoute(builder: (context) {
+                              return aluno_instrutor_screen();
+                            },),);
+                          }},
                        // onPressed: () {
                        //   var validatext = validacao.SenhaEmailValidacao(email.text, senha.text);
 
