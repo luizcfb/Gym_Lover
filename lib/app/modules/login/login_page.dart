@@ -138,7 +138,7 @@ class LoginPageState extends ModularState<LoginPage, LoginStore> {
                   width: 700,
                   // ignore: deprecated_member_use
                   child: RaisedButton(
-                    onPressed: () => controller.redirectHome(),
+                    onPressed: () => controller.signInEmail(),
                     color: Color(0xFF9f1a1b),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(
