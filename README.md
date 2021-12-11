@@ -1,16 +1,27 @@
 # gym_lover
 
-A new Flutter application.
+Abra o terminal e execute esse comando para gerar build do gerenciador de estado, arquivos com `*_store.dart`
 
-## Getting Started
+```
+flutter packages pub run build_runner watch --delete-conflicting-outputs
+```
 
-This project is a starting point for a Flutter application.
+Em outro terminal executa o projeto
 
-A few resources to get you started if this is your first Flutter project:
+```
+flutter run
+```
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Referências
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Mobx - https://www.youtube.com/watch?v=WviynRbRtC4
+Mobx - https://blog.flutterando.com.br/guia-completo-do-mobx-11d20391428e
+Mobx - https://blog.flutterando.com.br/analyzing-bloc-and-mobx-7118053e913a
+
+Firebase - https://blog.flutterando.com.br/seu-primeiro-crud-com-flutter-e-firestore-parte-1-be3e9392a301
+Firebase for Flutter - https://firebase.flutter.dev/docs/overview/
+Firebase configurar - https://blog.flutterando.com.br/integrando-seu-app-com-firebase-1e2dfc61b740
+Bug do google auth - https://stackoverflow.com/questions/54557479/flutter-and-google-sign-in-plugin-platformexceptionsign-in-failed-com-google
+
+Estrutura Modular - https://modular.flutterando.com.br/docs/flutter_modular/start
+Estrutura MOdular - https://blog.flutterando.com.br/seu-primeiro-crud-com-flutter-e-firestore-parte-1-be3e9392a301
