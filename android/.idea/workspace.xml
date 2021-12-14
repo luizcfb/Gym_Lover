@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6c0695c0-14c3-42f8-89e4-96d3519d80f8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/../.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/../.dart_tool/package_config_subset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.packages" beforeDir="false" afterPath="$PROJECT_DIR$/../.packages" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/Cadastro_Aluno.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/Cadastro_Aluno.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/Cadastro_Intrutor.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/Cadastro_Intrutor.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/Validacao.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/Validacao.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/auth.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/auth.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/auth_exception.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/auth_exception.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/cadastro.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/cadastro.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/controllers/home_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/controllers/home_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/controllers/treino_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/controllers/treino_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/forgot_password.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/forgot_password.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/login_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/login_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/models/exercicio_modal.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/models/exercicio_modal.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/models/treino_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/models/treino_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/splash_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/splash_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/views/home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/views/home.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/views/treino_personal.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/views/treino_personal.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/views/treinos.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/views/treinos.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../pubspec.yaml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="android" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="22ERkMFLc3c02trwEICQrPfRVll" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6c0695c0-14c3-42f8-89e4-96d3519d80f8" name="Default Changelist" comment="" />
+      <created>1639400908195</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1639400908195</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

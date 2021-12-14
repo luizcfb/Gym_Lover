@@ -7,27 +7,35 @@ class ExercicioCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {},
-      child: Card(
-        child: Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('assets/image/poli.gif'),
-              fit: BoxFit.cover,
-              alignment: Alignment.topCenter,
-            ),
-          ),
-          height: 180,
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: GestureDetector(
+        onTap: () {},
+        child: Card(
           child: Container(
-            child: Text(
-              "Abdominal Supra",
-              style: TextStyle(
+            width: 180,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: NetworkImage("${exercicioModal?.image}"),
+                fit: BoxFit.cover,
+                alignment: Alignment.topCenter,
+              ),
+            ),
+            height: 180,
+            child: Container(
+              child: Text(
+                "${exercicioModal?.nome}",
+                style: TextStyle(
                   fontSize: 22,
                   color: Colors.black,
-                  fontWeight: FontWeight.bold),
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              margin: EdgeInsets.only(
+                top: 20,
+                left: 15,
+              ),
             ),
-            margin: EdgeInsets.only(top: 20, left: 15),
           ),
         ),
       ),

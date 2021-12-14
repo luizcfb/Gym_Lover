@@ -13,11 +13,11 @@ import 'package:gym_lover/views/widgets/exercicio_card.dart';
 // import "package:provider/provider.dart";
 
 class treinos_screen extends StatefulWidget {
-  final TreinoModel treinoModel;
+  final TreinoModel? treinoModel;
 
   const treinos_screen({
     Key? key,
-    required this.treinoModel,
+    this.treinoModel,
   }) : super(key: key);
 
   @override
@@ -31,7 +31,7 @@ class _treinos_screenState extends State<treinos_screen> {
   void initState() {
     SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
     setState(() {
-      controller.exercicios = widget.treinoModel.exercicios ?? [];
+      controller.exercicios = widget.treinoModel?.exercicios ?? [];
     });
     super.initState();
   }
@@ -64,7 +64,7 @@ class _treinos_screenState extends State<treinos_screen> {
                   floating: true,
                   flexibleSpace: AppBar(
                     backgroundColor: Color(0xFFc81e24),
-                    title: Text("${widget.treinoModel.nome}"),
+                    title: Text("${widget.treinoModel?.nome}"),
                     elevation: 0,
                   ),
                 ),
@@ -74,7 +74,16 @@ class _treinos_screenState extends State<treinos_screen> {
                   ),
                 ),
                 SliverToBoxAdapter(
-                  child: Text("Lista de Treino"),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: Text(
+                      "Lista de Exercício",
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
                 ),
                 Expanded(
                   flex: 1,
@@ -88,8 +97,7 @@ class _treinos_screenState extends State<treinos_screen> {
                     delegate: SliverChildBuilderDelegate(
                       (BuildContext context, int index) {
                         return ExercicioCard(
-                          exercicioModal:
-                              controller.exercicios.elementAt(index),
+                          exercicioModal: controller.exercicios.elementAt(index),
                         );
                       },
                       childCount: controller.exercicios.length,

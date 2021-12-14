@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "282456140478",
+    "firebase_url": "https://gymlover-7e668-default-rtdb.firebaseio.com",
+    "project_id": "gymlover-7e668",
+    "storage_bucket": "gymlover-7e668.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:282456140478:android:6556b465ae91e32fa54cef",
+        "android_client_info": {
+          "package_name": "luizcarlos.com.gym_lover"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "282456140478-2o2lfsorrrhiv5c54t4f7ooeo25i6g6m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "luizcarlos.com.gym_lover",
+            "certificate_hash": "6b9f6e18dc97eb1c2b42da3033f4462b72742f1b"
+          }
+        },
+        {
+          "client_id": "282456140478-66sq56icpfet8vjh3c6e46q91ijtfl2l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVz-kjmT9Bj9oOmdYD4dDtjQvIO6R8gsU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "282456140478-66sq56icpfet8vjh3c6e46q91ijtfl2l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

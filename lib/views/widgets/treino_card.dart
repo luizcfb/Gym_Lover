@@ -9,39 +9,52 @@ class TreinoCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) {
-              return treinos_screen(
-                treinoModel: treinoModel,
-              );
-            },
-          ),
-        );
-      },
-      child: Card(
-        child: Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("${treinoModel.imagem}"),
-              fit: BoxFit.cover,
-              alignment: Alignment.topCenter,
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) {
+                return treinos_screen(
+                  treinoModel: treinoModel,
+                );
+              },
             ),
-          ),
-          height: 180,
+          );
+        },
+        child: Card(
           child: Container(
-            child: Text(
-              "${treinoModel.nome}",
-              style: TextStyle(
-                fontSize: 22,
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
+            decoration: BoxDecoration(
+              boxShadow: <BoxShadow>[
+                BoxShadow(
+                  color: Colors.black54,
+                  blurRadius: 15.0,
+                  offset: Offset(0.0, 0.75),
+                ),
+              ],
+              image: DecorationImage(
+                image: NetworkImage("${treinoModel.imagem}"),
+                fit: BoxFit.cover,
+                alignment: Alignment.topCenter,
               ),
             ),
-            margin: EdgeInsets.only(top: 20, left: 15),
+            height: 180,
+            child: Container(
+              child: Text(
+                "${treinoModel.nome}",
+                style: TextStyle(
+                  fontSize: 22,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              margin: EdgeInsets.only(
+                top: 20,
+                left: 15,
+              ),
+            ),
           ),
         ),
       ),
