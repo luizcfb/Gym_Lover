@@ -8,6 +8,7 @@ import 'package:gym_lover/Alunos_instrutor.dart';
 import 'package:gym_lover/cadastro.dart';
 import 'package:gym_lover/forgot_password.dart';
 import 'package:gym_lover/views/home.dart';
+import 'Alunos_instrutor.dart';
 // import 'package:gym_lover/Validacao.dart';
 // import "package:provider/provider.dart";
 
@@ -31,6 +32,8 @@ class _login_screenState extends State<login_screen> {
     // final width = MediaQuery.of(context).size.width;
     // Auth auth = Provider.of(context, listen: false);
     // Validacao validacao = new Validacao();
+    String email = "";
+    String senha = "";
 
     return Scaffold(
         backgroundColor: Colors.white,
@@ -73,8 +76,10 @@ class _login_screenState extends State<login_screen> {
                   margin: EdgeInsets.only(top: 180, left: 40, right: 40),
                   padding: EdgeInsets.only(top: 2, left: 8, right: 8, bottom: 4),
                   decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(30)),
-                  child: TextFormField(
-                    controller: email,
+                  child: TextField(
+                    onChanged: (text) {
+                      email = text;
+                    },
                     decoration: InputDecoration(
                       icon: Icon(Icons.email),
                       hintText: "E-mail",
@@ -88,8 +93,10 @@ class _login_screenState extends State<login_screen> {
                   margin: EdgeInsets.only(top: 250, left: 40, right: 40),
                   padding: EdgeInsets.only(top: 2, left: 8, right: 8, bottom: 4),
                   decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(30)),
-                  child: TextFormField(
-                    controller: senha,
+                  child: TextField(
+                    onChanged: (text) {
+                      senha = text;
+                    },
                     decoration: InputDecoration(
                       icon: Icon(Icons.lock_rounded),
                       hintText: "Senha",
@@ -108,7 +115,7 @@ class _login_screenState extends State<login_screen> {
                       // ignore: deprecated_member_use
                       child: RaisedButton(
                         onPressed: () {
-                          if (senha.text == "123456" && email.text == "aluno@gymlover.com") {
+                          if (senha == "123456" && email == "aluno@gymlover.com") {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
@@ -117,7 +124,7 @@ class _login_screenState extends State<login_screen> {
                                 },
                               ),
                             );
-                          } else if (senha.text == "123456" && email.text == "personal@gymlover.com") {
+                          } else if (senha == "123456" && email == "personal@gymlover.com") {
                             Navigator.push(
                               context,
                               MaterialPageRoute(

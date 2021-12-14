@@ -8,7 +8,7 @@ import 'package:gym_lover/cadastro.dart';
 import 'package:gym_lover/controllers/home_controller.dart';
 import 'package:gym_lover/VIEWS/home.dart';
 import 'package:gym_lover/models/Alunos_modal.dart';
-// import 'package:gym_lover/views/widgets/Alunos_card.dart';
+import 'package:gym_lover/views/widgets/Alunos_card.dart';
 import 'package:gym_lover/controllers/Aluno_controller.dart';
 
 class aluno_instrutor_screen extends StatefulWidget {
@@ -95,7 +95,7 @@ class _aluno_instrutor_screenState extends State<aluno_instrutor_screen> {
                 SliverList(
                   delegate: SliverChildBuilderDelegate(
                     (BuildContext context, int index) {
-                      // return alunosCard(alunosmodal: controller.alunos[index]);
+                      return alunosCard(alunosmodal: controller.alunos[index]);
                     },
                     childCount: controller.alunos.length,
                   ),
